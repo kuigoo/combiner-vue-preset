@@ -1,9 +1,10 @@
 {
-  "name": "@page-combiner/template",
+  "name": "combiner-vue-preset",
   "version": "0.0.1",
   "description": "page-combiner scaffold preset for vue-cli",
   "author": "zhoushikui@souche.com",
   "main": "preset.json",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
