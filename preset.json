@@ -1,4 +1,5 @@
 {
+  "bare": true,
   "useConfigFiles": false,
   "plugins": {
     "@vue/cli-plugin-babel": {

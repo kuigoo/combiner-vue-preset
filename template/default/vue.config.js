@@ -1,16 +1,21 @@
 const path = require('path');
 
+const isPreview = process.env.VUE_APP_MODE = 'preview';
+const previewDevServer = {
+  hot: false,
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
+  contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'dist')],
+  watchContentBase: true,
+};
+
 module.exports = {
   css: {
     extract: false,
   },
   devServer: {
-    hot: false,
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    },
-    contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'dist')],
-    watchContentBase: true,
+    ...(isPreview ? previewDevServer : {}),
   },
   chainWebpack(config) {
     ['css', 'less', 'stylus', 'sass', 'scss'].forEach((rule) => {
